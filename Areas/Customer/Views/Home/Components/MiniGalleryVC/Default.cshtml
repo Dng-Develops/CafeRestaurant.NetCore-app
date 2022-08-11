@@ -1,0 +1,9 @@
+﻿@model IEnumerable<CafeRestaurant.Models.Gallery>
+
+@foreach (var item in Model)
+{
+                 <a class="item-gallery-sidebar wrap-pic-w" href="@item.Image" data-lightbox="gallery-footer">
+                    <img src="@item.Image" alt="GALLERY">
+                </a>
+
+}

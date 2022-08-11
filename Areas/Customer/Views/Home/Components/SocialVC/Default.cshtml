@@ -1,0 +1,10 @@
+﻿@model IEnumerable<CafeRestaurant.Models.Address>
+@foreach (var item in Model)
+{
+   
+        <a href="@item.Facebook" class="fs-15 c-white" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="@item.Twitter" class="fs-15 c-white" target="_blank"><i class="fa fa-twitter m-l-18" aria-hidden="true"></i></a>
+        <a href="@item.Instagram" class="fs-15 c-white" target="_blank"><i class="fa fa-instagram m-l-18" aria-hidden="true"></i></a>
+        <a href="@item.Trip" class="fs-15 c-white" target="_blank"><i class="fa fa-tripadvisor m-l-18" aria-hidden="true"></i></a>
+   
+}

@@ -1,0 +1,8 @@
+﻿Menu items will filtered according to categor and displayed without refreshing
+Add Fluent api and validation
+
+
+
+// Bigger Features
+
+Complete chose your table reservation system.

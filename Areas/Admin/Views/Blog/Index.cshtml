@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CafeRestaurant.Models.Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Blog Comments</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Comment</a>
+</p>
+<table id="myTable" class="table table-bordered table-striped" >
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Approved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                 @if (item.Image == null)
+                {
+                   <img src="~/Site/images/image-not-found-.jpg" width="100" height="80"/>        
+                }else{
+                   <img src="@item.Image" width="100" height="80"/>  
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                 @if (item.Approved)
+                    {
+                            <button class="btn btn-success btn-sm "><i class="bi bi-check-circle"></i> Yes</button>
+                        }
+                        else
+                        {
+                            <button class="btn btn-danger btn-sm "><i class="bi bi-x-circle"></i> No</button>
+                        }
+                    
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success"><i class="bi bi-check2"></i> Approve</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+} );
+    </script>
+}

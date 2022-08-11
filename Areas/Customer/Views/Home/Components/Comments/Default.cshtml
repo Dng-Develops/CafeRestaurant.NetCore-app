@@ -1,0 +1,51 @@
+﻿@model IEnumerable<CafeRestaurant.Models.Blog>
+
+
+@foreach (var item in Model)
+{
+         <!-- Block4 -->
+                    <div class="blo4 p-b-63">
+                        <!-- - -->
+                        <div class="pic-blo4 hov-img-zoom pos-relative">
+                            <a>
+                                <img src="@item.Image" alt="IMG-BLOG" style="max-height: 250px; max-width:350px">
+                            </a>
+
+                            <div class="date-blo4 flex-col-c-m">
+                                <span class="txt30 m-b-4">
+                                    @item.Date.ToString("dd");
+                                </span>
+
+                                <span class="txt31">
+                                    @item.Date.ToString("mmmm-yyyy")
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- - -->
+                        <div class="text-blo4 p-t-33">
+                            <h4 class="p-b-16">
+                                <a class="tit9">@item.Title</a>
+                            </h4>
+
+                            <div class="txt32 flex-w p-b-24">
+                                <span>
+                                   @item.Name
+                                    <span class="m-r-6 m-l-4">|</span>
+                                </span>
+
+                                <span>
+                                    @item.Date.ToShortDateString();
+                                    <span class="m-r-6 m-l-4">|</span>
+                                </span>
+
+                            </div>
+
+                            <p>
+                               @item.Message;
+                            </p>
+                        </div>
+                    </div>
+}
+
+

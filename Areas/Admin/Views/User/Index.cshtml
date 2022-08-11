@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CafeRestaurant.Models.ApplicationUser>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="text-primary">User List</h2>
+    </div>
+        <div class="col-md-6">
+           @* Register has no controller thats why ı wrote like this*@
+        <a asp-area="Identity"  asp-page="/Account/Register" class="btn btn-primary form-control">Add User</a> 
+    </div>
+</div>
+
+<table class="table table-striped table-bordered" id="myTable" >
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Email
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+       
+            <td>
+                    @if (Model.Count() <= 1)
+                    {
+                        
+                    }
+                    else
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id.ToString()" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</a>
+                    }
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+        @section Scripts{
+    <script type="text/javascript">
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+} );
+    </script>
+}

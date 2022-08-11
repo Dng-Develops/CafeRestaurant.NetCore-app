@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="/Site/images/icons/room-service.png" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/fonts/themify/themify-icons.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/slick/slick.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/vendor/lightbox2/css/lightbox.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/Site/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/Site/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body class="animsition">
+
+    <!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="wrap-menu-header gradient1 trans-0-4">
+            <div class="container h-full">
+                <div class="wrap_header trans-0-3">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a asp-area="Customer" asp-action="Index" asp-controller="Home">
+                            <img src="/Site/images/icons/room-service.png" alt="IMG-LOGO" @*data-logofixed="/Site/images/icons/logo2.png"*@ >
+                            @*<a href="https://www.flaticon.com/free-icons/hotel-service" title="hotel service icons">Hotel service icons created by Triangle Squad - Flaticon</a>*@
+                        </a>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="wrap_menu p-l-45 p-l-0-xl">
+                        <nav class="menu">
+                            <ul class="main_menu">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Index" asp-controller="Home">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Menu" asp-controller="Home">Menu</a>
+                                    </li>
+
+                                    
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Gallery" asp-controller="Home">Gallery</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Admin" asp-action="Index" asp-controller="Home" target="_blank">Admin Panel</a>
+                                    </li>
+
+                                    <li>
+                                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                            <button type="submit" class="nav-link btn btn-link text-white">Logout</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Reservation" asp-controller="Home">Reservation</a>
+                                    </li>
+                                }
+                                else
+                                {
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Index" asp-controller="Home">Home</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Menu" asp-controller="Home">Menu</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Gallery" asp-controller="Home">Gallery</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="About" asp-controller="Home">About</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Blog" asp-controller="Home">Blog</a>
+                                    </li>
+
+                                    <li>
+                                        <a asp-area="Customer" asp-action="Contact" asp-controller="Home">Contact</a>
+                                    </li>
+                                     <li>
+                                        <a asp-area="Customer" asp-action="Reservation" asp-controller="Home">Reservation</a>
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="social flex-w flex-l-m p-r-20">
+                        @await Component.InvokeAsync("SocialVC")
+                        <button class="btn-show-sidebar m-l-33 trans-0-4"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar trans-0-4">
+        <!-- Button Hide sidebar -->
+        <button class="btn-hide-sidebar ti-close color0-hov trans-0-4"></button>
+
+        <!-- - -->
+        <ul class="menu-sidebar p-t-95 p-b-70">
+            <li class="t-center m-b-13">
+                <a asp-area="Customer" asp-action="Index" asp-controller="Home" class="txt19">Home</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Customer" asp-action="Menu" asp-controller="Home" class="txt19">Menu</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Customer" asp-action="Gallery" asp-controller="Home" class="txt19">Gallery</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Customer" asp-action="About" asp-controller="Home" class="txt19">About</a>
+            </li>
+
+            <li class="t-center m-b-13">
+                <a asp-area="Customer" asp-action="Blog" asp-controller="Home" class="txt19">Blog</a>
+            </li>
+
+            <li class="t-center m-b-33">
+                <a asp-area="Customer" asp-action="Contact" asp-controller="Home" class="txt19">Contact</a>
+            </li>
+
+            <li class="t-center">
+                <!-- Button3 -->
+                <a asp-area="Customer" asp-action="Reservation" asp-controller="Home" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
+                    Reservation
+                </a>
+            </li>
+            <br />
+            <hr>
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                <li class="t-center" m-b-33>
+                    <a asp-area="Admin" asp-action="Index" asp-controller="Home" target="_blank" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">Admin Panel</a>
+                </li>
+
+                <li class="t-center mt-2">
+                    <form class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="nav-link btn btn-link text-white">Logout</button>
+                    </form>
+                </li>
+            }
+
+        </ul>
+
+        <!-- - -->
+        <div class="gallery-sidebar t-center p-l-60 p-r-60 p-b-40">
+            <!-- - -->
+            <h4 class="txt20 m-b-33">
+                Gallery
+            </h4>
+
+            <!-- Gallery -->
+            <div class="wrap-gallery-sidebar flex-w">
+                @await Component.InvokeAsync("MiniGalleryVC")
+            </div>
+        </div>
+    </aside>
+
+
+    @RenderBody();
+
+    <!-- Footer -->
+    <footer class="bg1">
+        <div class="container p-t-40 p-b-70">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 p-t-50">
+                    <!-- - -->
+                    <h4 class="txt13 m-b-33">
+                        Contact Us
+                    </h4>
+
+                    @await Component.InvokeAsync("AddressVC")
+                    <div class="p-t-10">
+                        <h4 class="txt13 m-b-32">
+                            Social Media
+                        </h4>
+
+                        <div class="p-t-5 p-b-5">
+                            @await Component.InvokeAsync("SocialVC")
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-6 col-md-4 p-t-50">
+
+                    <h4 class="txt13 m-b-32">
+                        Opening Times
+                    </h4>
+
+                    <ul>
+                        <li class="txt14">
+                            Every Day
+                        </li>
+
+                        <li class="txt14">
+                            09:30 AM – 12:00 PM
+                        </li>
+                    </ul>
+
+                </div>
+
+
+
+                <div class="col-sm-6 col-md-4 p-t-50">
+                    <!-- - -->
+                    <h4 class="txt13 m-b-38">
+                        Gallery
+                    </h4>
+
+                    <!-- Gallery footer -->
+
+                    <div class="wrap-gallery-footer flex-w">
+                        @await Component.InvokeAsync("MiniGalleryVC")
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="end-footer bg2">
+            <div class="container">
+                <div class="flex-sb-m flex-w p-t-22 p-b-22 flex-c d-flex justify-content-center">
+
+                    <div class="txt17 p-r-20 p-t-5 p-b-5">
+                        <span> Copyright &copy; 2022 All rights reserved</span>
+                        <a asp-area="Identity" asp-page="/Account/Login" target="_blank" class="mx-5">Admin</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top bg0-hov" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+        </span>
+    </div>
+
+    <!-- Container Selection1 -->
+    <div id="dropDownSelect1"></div>
+
+    <!-- Modal Video 01-->
+    <div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="modal-dialog" role="document" data-dismiss="modal">
+            <div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+
+            <div class="wrap-video-mo-01">
+                <div class="w-full wrap-pic-w op-0-0"><img src="/Site/images/icons/video-16-9.jpg" alt="IMG"></div>
+                <div class="video-mo-01">
+                    <iframe src="https://www.youtube.com/embed/5k1hSu2gdKE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/bootstrap/js/popper.js"></script>
+    <script type="text/javascript" src="/Site/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="/Site/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/slick/slick.min.js"></script>
+    <script type="text/javascript" src="/Site/js/slick-custom.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/parallax100/parallax100.js"></script>
+    <script type="text/javascript">$('.parallax100').parallax100();</script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="/Site/vendor/lightbox2/js/lightbox.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="/Site/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false),
+    @await Component.InvokeAsync("NToastNotify")
+
+</body>
+</html>
