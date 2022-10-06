@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3xx3GHqjJJIJ4M1fDRnXJtOLcogqUWlfftSpr/yIwfpxit32QnqcGMzgFlJz/s+uxqaX349JKRUkMIpqxS35Rw==",
+  "dgSpecHash": "o+TeCtHGeFAPcv45T9r84EcniDnZ3nVRecyelidO72FSSEjuu3hZvS42yPWlsyvnz5zkyqk+ioBGJ6QZKoGBrw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hz.Ord.Prof.Dr.Deniz\\Desktop\\Web Uygulamalar\\My_Portfolio\\CafeRestaurant\\CafeRestaurant.csproj",
+  "projectFilePath": "C:\\Users\\Hz.Ord.Prof.Dr.Deniz\\Desktop\\Web Uygulamalar\\_Portfolio\\CafeRestaurant\\CafeRestaurant.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hz.Ord.Prof.Dr.Deniz\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Hz.Ord.Prof.Dr.Deniz\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
